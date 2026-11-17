@@ -383,9 +383,8 @@ export default function App() {
                     <tr>
                       <th>#</th>
                       <th style={{ textAlign: 'left' }}>Item</th>
-                      <th>Qty</th>
-                      <th>Rate</th>
-                      <th className="r">Amount</th>
+                      <th>Weight</th>
+                      <th className="r">Rate</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -394,8 +393,7 @@ export default function App() {
                         <td style={{ textAlign: 'center' }}>{idx + 1}</td>
                         <td>{item.name}</td>
                         <td style={{ textAlign: 'center' }}>{item.qty}{item.unit ? ' ' + item.unit : ''}</td>
-                        <td style={{ textAlign: 'right' }}>{fmt(item.rate)}</td>
-                        <td className="r">{fmt(item.amount)}</td>
+                        <td className="r">{fmt(item.rate)}</td>
                       </tr>
                     ))}
                   </tbody>
