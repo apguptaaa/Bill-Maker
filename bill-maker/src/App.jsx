@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 
 const UNITS = /^(kg|kgs|g|gm|gram|grams|pound|pounds|pond|lb|lbs|pcs|pc|piece|pieces|dozen|dz|litre|liter|ltr|l|ml|plate|box|packet|pack)$/i;
@@ -208,7 +208,7 @@ export default function App() {
       a.click();
       URL.revokeObjectURL(url);
       setMsg('Image saved ✅');
-    } catch (e) {
+    } catch {
       setMsg('Download failed. Use Print to save as PDF.');
     }
   };
@@ -237,9 +237,9 @@ export default function App() {
           ))}
         </div>
 
-        <label>Color theme</label>
         <label>Watermark</label>
         <select value={wm} onChange={e => setWm(e.target.value)}>{[['logo', 'Shop logo (in a circle)'], ['none', 'None']].map(([v, n]) => <option key={v} value={v}>{n}</option>)}</select>
+        <label>Color theme</label>
         <div className="tpls">
           {TPLS.map(t => (
             <button key={t.id} className={'sw' + (t.id === tpl ? ' on' : '')} onClick={() => setTpl(t.id)}>
