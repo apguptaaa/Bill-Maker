@@ -111,87 +111,22 @@ select{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8p
 #scaleWrap{will-change:transform}
 .mobonly{display:none}
 @media(min-width:800px){.pvcol{position:sticky;top:12px}}
-
-/* ── Mobile (≤ 599px) ── */
-@media(max-width:599px){
-  .mobonly{display:flex;margin-bottom:8px}
-
-  /* layout: single column, form on top, bill below */
-  .wrap,.wrap.side,.wrap.stack{
-    grid-template-columns:1fr;
-    padding:8px;
-    gap:10px;
-  }
-
-  /* remove sticky on mobile – bill should scroll naturally */
-  .pvcol,.wrap.side .pvcol{
-    position:static;
-  }
-
-  h1{font-size:18px}
-
-  .card{padding:12px}
-
-  /* all two-column rows become single column */
-  .row,.row3{
-    grid-template-columns:1fr;
-    gap:6px;
-  }
-
-  /* bigger tap targets for inputs */
-  input,select,textarea{
-    font-size:16px;   /* prevents iOS zoom on focus */
-    padding:11px 12px;
-  }
-
-  textarea{min-height:90px}
-
-  button{
-    padding:11px 14px;
-    font-size:14px;
-  }
-
-  /* make primary button full-width on mobile */
-  .btns{flex-direction:column}
-  .btns button{width:100%;text-align:center}
-
-  /* theme swatches: a bit smaller */
-  .sw{width:58px;font-size:10px}
-
-  /* item list rows */
-  .li{font-size:13px;flex-wrap:wrap;gap:6px}
-  .li span{flex:1;min-width:0}
-
-  /* bill preview: allow horizontal scroll if needed */
-  .pvbox{overflow-x:auto;-webkit-overflow-scrolling:touch}
-
-  /* bill bottom section: stack vertically */
-  .bottom{grid-template-columns:1fr;gap:10px}
-
-  /* bill info boxes */
-  .info{grid-template-columns:1fr;gap:8px}
-
-  /* bill header: stack on very small */
-  .bhead{flex-wrap:wrap;gap:8px;padding:12px 14px}
-  .br{min-width:0;width:100%;text-align:left}
-  .itl{font-size:20px}
-
-  /* signature row */
-  .signrow{justify-content:center}
-  .sign{width:160px}
+@media(max-width:799px){
+.mobonly{display:flex;margin-bottom:8px}
+.wrap{padding:8px;gap:8px}
+.wrap.stack{grid-template-columns:1fr}
+.wrap.side{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.wrap.side .pvcol{position:sticky;top:8px}
+.wrap.side .card.noprint{padding:10px}
+.wrap.side .row,.wrap.side .row3{grid-template-columns:1fr;gap:0}
+.wrap.side h1{font-size:17px}
+.wrap.side label{font-size:11px}
+.wrap.side input,.wrap.side select,.wrap.side textarea{padding:7px 8px;font-size:13px}
+.wrap.side button{padding:7px 10px;font-size:12px}
+.wrap.side .sw{width:54px}
+.wrap.side .li{font-size:12px}
+.wrap.stack input,.wrap.stack select,.wrap.stack textarea{font-size:16px}
 }
-
-/* ── Tablet (600–799px) ── */
-@media(min-width:600px) and (max-width:799px){
-  .wrap,.wrap.side,.wrap.stack{
-    grid-template-columns:1fr;
-    padding:12px;
-    gap:12px;
-  }
-  .pvcol{position:static}
-  input,select,textarea{font-size:15px}
-  .bottom{grid-template-columns:1fr}
-  .info{grid-template-columns:1fr 1fr}
-}
+@media(max-width:420px){.wrap.stack .row3{grid-template-columns:1fr 1fr}}
 .para{text-align:center;font-size:13px;line-height:1.55;padding:8px 12px;margin:0 0 12px;border:1px dashed var(--a);border-radius:10px;background:rgba(255,255,255,.7);white-space:pre-wrap;word-break:break-word}
 .lay-receipt .para{border-radius:0;font-size:12px;border-color:#333}
