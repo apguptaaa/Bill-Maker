@@ -16,11 +16,12 @@ Supports two layouts (Modern & Receipt), three color themes, logo upload, signat
 
 ```bash
 # Clone the repo
-git clone https://github.com/apguptaaa/Bill-Maker.git
-cd Bill-Maker
+git clone https://github.com/apguptaaa/RCBGWL-tools.git
+cd RCBGWL-tools
 
 # Install dependencies
 npm install
+npm run dev:bill-maker
 ```
 
 ---
@@ -28,7 +29,7 @@ npm install
 ## Run locally (development)
 
 ```bash
-npm run dev
+npm run dev:bill-maker
 ```
 
 Opens at **http://localhost:5173** with hot-reload.
@@ -38,7 +39,7 @@ Opens at **http://localhost:5173** with hot-reload.
 ## Build for production
 
 ```bash
-npm run build
+npm run build:bill-maker
 ```
 
 Output goes to the `dist/` folder.
@@ -58,7 +59,7 @@ Serves `dist/` locally at **http://localhost:4173** so you can verify the build 
 ## Lint
 
 ```bash
-npm run lint
+npm run lint:bill-maker
 ```
 
 ---
@@ -82,7 +83,7 @@ Also add `base` to `vite.config.js`:
 
 ```js
 export default defineConfig({
-  base: '/Bill-Maker/',
+  base: '/RCBGWL-tools/',
   plugins: [react()],
 })
 ```
@@ -93,7 +94,7 @@ Then run:
 npm run deploy
 ```
 
-Your site will be live at `https://apguptaaa.github.io/Bill-Maker/`.
+Your site will be live at `https://apguptaaa.github.io/RCBGWL-tools/`.
 
 ---
 
@@ -123,7 +124,7 @@ git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/apguptaaa/Bill-Maker.git
+git remote add origin https://github.com/apguptaaa/RCBGWL-tools.git
 git push -u origin main
 ```
 

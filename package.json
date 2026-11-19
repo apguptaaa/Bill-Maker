@@ -1,0 +1,12 @@
+{
+  "name": "rcbgwl-tools",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:bill-maker": "npm run dev --workspace bill-maker",
+    "build:bill-maker": "npm run build --workspace bill-maker",
+    "lint:bill-maker": "npm run lint --workspace bill-maker"
+  }
+}
